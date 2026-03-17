@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Evangelisation Entries</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f6fb;
+padding:20px;
+}
+
+h2{
+text-align:center;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+}
+
+th, td{
+padding:10px;
+border:1px solid #ddd;
+text-align:center;
+}
+
+th{
+background:#2575fc;
+color:white;
+}
+
+a{
+display:block;
+margin-top:20px;
+text-align:center;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Evangelisation Entries</h2>
+
+<table>
+
+<tr>
+<th>Zone</th>
+<th>Area</th>
+<th>Sitting</th>
+<th>Name</th>
+<th>Place</th>
+<th>Date</th>
+<th>Duration</th>
+<th>Contact</th>
+<th>Phone</th>
+<th>Language</th>
+<th>Evangelist</th>
+<th>Supported</th>
+<th>Topics</th>
+<th>Status</th>
+<th>Sathvartha</th>
+</tr>
+
+{% for row in data %}
+
+<tr>
+<td>{{row[1]}}</td>
+<td>{{row[2]}}</td>
+<td>{{row[3]}}</td>
+<td>{{row[4]}}</td>
+<td>{{row[5]}}</td>
+<td>{{row[6]}}</td>
+<td>{{row[7]}}</td>
+<td>{{row[8]}}</td>
+<td>{{row[9]}}</td>
+<td>{{row[10]}}</td>
+<td>{{row[11]}}</td>
+<td>{{row[12]}}</td>
+<td>{{row[13]}}</td>
+<td>{{row[14]}}</td>
+<td>{{row[15]}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<a href="/">Back to Form</a>
+
+</body>
+</html>

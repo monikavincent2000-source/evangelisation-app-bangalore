@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Evangelisation Entry</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#6a11cb,#2575fc);
+margin:0;
+padding:0;
+}
+
+.container{
+max-width:420px;
+margin:auto;
+margin-top:30px;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2{
+text-align:center;
+color:#333;
+margin-bottom:20px;
+}
+
+label{
+font-weight:bold;
+color:#444;
+}
+
+input, select{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:14px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#2575fc;
+color:white;
+border:none;
+border-radius:8px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#1b5edb;
+}
+
+.linkbtn{
+display:block;
+text-align:center;
+margin-top:15px;
+background:#f1f1f1;
+padding:10px;
+border-radius:8px;
+text-decoration:none;
+color:#333;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Evangelisation Entry</h2>
+
+<form method="POST">
+
+<label>Zone</label>
+<select id="zone" name="zone" onchange="updateAreas()">
+<option value="">Select Zone</option>
+<option value="Hebbal">Hebbal</option>
+<option value="Whitefield">Whitefield</option>
+<option value="Koramangala">Koramangala</option>
+</select>
+
+<label>Area</label>
+<select id="area" name="area">
+<option>Select Area</option>
+</select>
+
+<label>Sitting</label>
+<select name="sitting">
+<option>1st</option>
+<option>2nd</option>
+<option>3rd</option>
+</select>
+
+<label>Name</label>
+<input type="text" name="name">
+
+<label>Place</label>
+<input type="text" name="place">
+
+<label>Date</label>
+<input type="date" name="date">
+
+<label>Time Duration</label>
+<input type="text" name="duration">
+
+<label>Way of Contact</label>
+<select name="contact_way">
+<option>Phone</option>
+<option>Door to Door</option>
+<option>Other</option>
+</select>
+
+<label>Phone Number</label>
+<input type="text" name="phone">
+
+<label>Language</label>
+<select name="language">
+<option>Malayalam</option>
+<option>Kannada</option>
+<option>English</option>
+<option>Tamil</option>
+<option>Hindi</option>
+</select>
+
+<label>Evangelist Name</label>
+<input type="text" name="evangelist">
+
+<label>Supported By</label>
+<input type="text" name="supported_by">
+
+<label>Topics</label>
+<input type="text" name="topics">
+
+<label>Status</label>
+<select name="status">
+<option>Positive</option>
+<option>Neutral</option>
+<option>Negative</option>
+</select>
+
+<label>Ready for Sathvartha</label>
+<select name="sathvartha">
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<button type="submit">Submit Entry</button>
+
+</form>
+
+<a class="linkbtn" href="/entries">View All Entries</a>
+
+</div>
+<script>
+
+function updateAreas(){
+
+var zone = document.getElementById("zone").value;
+var areaDropdown = document.getElementById("area");
+
+areaDropdown.innerHTML = "";
+
+var areas = [];
+
+if(zone == "Hebbal"){
+areas = ["Yeshwanthpur","Yelahanka","RT Nagar","Banaswadi","Horamavu"];
+}
+
+else if(zone == "Whitefield"){
+areas = ["Whitefield","Marathahalli"];
+}
+
+else if(zone == "Koramangala"){
+areas = ["Koramangala 1","Koramangala 2","Koramangala 3"];
+}
+
+for(var i=0;i<areas.length;i++){
+
+var option = document.createElement("option");
+option.text = areas[i];
+option.value = areas[i];
+
+areaDropdown.add(option);
+
+}
+
+}
+
+</script>
+</body>
+</html>
